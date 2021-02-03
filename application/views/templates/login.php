@@ -26,9 +26,11 @@
                     <i class="fas fa-user"></i>
                 </div>
                 <div>
+                   
                     <h5>Username</h5>
                     
-                    <input type="text" name="username" class="input" placeholder="Username">
+                    <input type="text" name="username" class="input" placeholder="Username" required>
+                    
                 </div>
             </div>
             <div class="input-div two">
@@ -36,8 +38,10 @@
                     <i class="fas fa-lock"></i>
                 </div>
                 <div>
+                    
                     <h5>Password</h5>
-                    <input type="password" name="password" class="input" placeholder="Password">
+                  
+                    <input type="password" name="password" class="input" placeholder="Password" required>
                 </div>
             </div>
           
@@ -45,7 +49,7 @@
             <a href="" class="forgot">Forgot Password?</a>
             
             <input type="submit" class="btn" value="Login">
-            <a href="" class="signup">Signup</a>
+            <a href="register" class="signup">Signup</a>
 
         </form>
     </div>

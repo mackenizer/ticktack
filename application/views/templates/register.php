@@ -18,30 +18,41 @@
             <div class="col-4">
                 <div class="text-center pb-5"></br></br>
                 <h1>Create Account</h1>
-                <span>Already have account? You can <a href="">Login</a> here</span>
+                <span>Already have account? You can <a href="login">Login</a> here</span>
                 </div>
+                <?php
+                    if(isset($_SESSION['success'])) { ?>
+
+                    <span class="text-success d-flex justify-content-center"><?php echo $_SESSION['success'];?></span>
+                <?php
+                }
+                ?>
                 <div class="d-flex justify-content-center">
                 <form action="" method="post">
                     <div class="form-row my-4">
                         <div class="col-md-12 mb-2">
-                       
+                            <span class="text-danger"><?php echo form_error('username');?></span>
                            <input type="text" name="username" id="username" class="form-control" placeholder="Username">
                            
                         </div>
                         <div class="col-md-12 mb-2">
+                            <span class="text-danger"><?php echo form_error('email');?></span>
                             <input type="text" name="email" id="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="col-md-12 mb-2">
-                            <input type="text" name="password" id="password" class="form-control" placeholder="Password">
+                            <span class="text-danger"><?php echo form_error('password');?></span>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
                         </div>
                         <div class="col-md-12 mb-2">
-                            <input type="text" name="repass" id="repass" class="form-control" placeholder="Retype Password">
+                            <span class="text-danger"><?php echo form_error('repass');?></span>
+                            <input type="password" name="repass" id="repass" class="form-control" placeholder="Confirm Password">
                         </div>
                         <div class="col-md-12 mb-4">
-                        <select class="custom-select" id="inputGroupSelect01" name="role">
+                        <span class="text-danger"><?php echo form_error('role');?></span>
+                        <select class="form-control" id="inlineFormCustomSelectPref" name="role">
                         <option selected>Select Role</option>
-                            <option value="1">Adviser</option>
-                            <option value="2">Student</option>
+                            <option value="adviser">Adviser</option>
+                            <option value="student">Student</option>
 
                         </select>
                          </div>
