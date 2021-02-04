@@ -49,6 +49,7 @@
             <a href="" class="forgot">Forgot Password?</a>
             
             <input type="submit" class="btn" value="Login">
+            <?php echo '<label class="text-danger">'. $this->session->flashdata("error")?></br>
             <a href="register" class="signup">Signup</a>
 
         </form>
