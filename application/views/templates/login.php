@@ -20,7 +20,7 @@
         <form action="" method="post">
             <img class="avatar" src="<?php echo base_url();?>assets/images/avatar.svg" alt="">
             <h2>TickTack</h2>
-            <p>Build your project with your team try</p>
+            <p>Build your project with your team test</p>
             <div class="input-div one">
                 <div class="i">
                     <i class="fas fa-user"></i>
