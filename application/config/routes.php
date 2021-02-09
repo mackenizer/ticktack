@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // http://localhost/thesis/index.php/auth/login
 
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'auth';
 $route['(:any)'] = 'pages/view/$1';
 
 
