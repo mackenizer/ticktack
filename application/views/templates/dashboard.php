@@ -24,7 +24,7 @@
             <img src="<?php echo base_url();?>assets/images/2.jpg" alt="" class="profile">
 
         </center>
-        <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="#"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
         <a href="#"><i class="fas fa-user-edit"></i><span>Profile</span></a>
         <a href="#"><i class="fas fa-user-friends"></i><span>Add Team</span></a>
         <a href="<?php echo base_url();?>index.php/auth/logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>

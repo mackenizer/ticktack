@@ -18,4 +18,8 @@ class User extends CI_Controller{
         
         $this->load->view('templates/dashboard');
     }
+
+    public function student(){
+        $this->load->view('templates/student');
+    }
 }
