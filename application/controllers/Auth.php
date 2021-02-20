@@ -35,7 +35,7 @@ class Auth extends CI_Controller{
                 $_SESSION['user_logged'] = true;
                 $_SESSION['username'] = $user->username;
 
-                redirect("index.php/user/dashboard", "refresh");
+                redirect("index.php/user/student", "refresh");
                
             }
             else{
@@ -68,7 +68,7 @@ class Auth extends CI_Controller{
        
         $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[12]');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
         $this->form_validation->set_rules('repass', 'Confirm Password', 'trim|required|matches[password]');
         $this->form_validation->set_rules('role', 'Role', 'required');
 
