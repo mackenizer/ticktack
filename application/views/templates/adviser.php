@@ -39,8 +39,8 @@
     </li>
     <li class="nav-item">
       <a href="#" class="nav-link text-dark">
-                <i class="fas fa-tasks mr-3 text-primary fa-fw"></i>
-                view task
+                <i class="fas fa-user-plus mr-3 text-primary fa-fw"></i>
+                add team
             </a>
     </li>
     <li class="nav-item">

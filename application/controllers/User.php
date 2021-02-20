@@ -22,4 +22,8 @@ class User extends CI_Controller{
     public function student(){
         $this->load->view('templates/student');
     }
+
+    public function adviser(){
+        $this->load->view('templates/adviser');
+    }
 }
