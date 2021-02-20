@@ -50,7 +50,7 @@
                         <div class="col-md-12 mb-4">
                         <span class="text-danger"><?php echo form_error('role');?></span>
                         <select class="form-control" id="inlineFormCustomSelectPref" name="role">
-                        <option selected>Select Role</option>
+                        
                             <option value="adviser">Adviser</option>
                             <option value="student">Student</option>
 

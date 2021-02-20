@@ -1,7 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowd');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller{
+    public function __construct(){
+        parent:: __construct();
+        $this->load->model('Auth_model');
+    }
 
     public function logout(){
         unset($_SESSION);
@@ -10,6 +14,10 @@ class Auth extends CI_Controller{
         redirect('index.php/auth/login');
 
     }
+
+   
+
+    
 
     public function login(){
 
@@ -21,21 +29,35 @@ class Auth extends CI_Controller{
 
             $username = $_POST['username'];
             $password= $_POST['password'];
+            
+            
+           
 
             $this->db->select('*');
             $this->db->from('users');
             $this->db->where(array('username' => $username, 'password' => $password));
+            
             $query = $this->db->get();
 
             $user = $query->row();
 
-            if($user->email){
+            if($user->email){   
                 $this->session->set_flashdata('success', "Successfully Login!");
+
+                $role = $_POST['role'];
+               
+
+               
 
                 $_SESSION['user_logged'] = true;
                 $_SESSION['username'] = $user->username;
 
-                redirect("index.php/user/student", "refresh");
+
+
+
+                // redirect("index.php/user/student");
+               
+
                
             }
             else{
@@ -47,9 +69,44 @@ class Auth extends CI_Controller{
         }
 
         
-      
+        
         $this->load->view('templates/login');
+
     }
+
+    // function auth(){
+    //     $username = $this->input->post('username', true);
+    //     $password = $this->input->post('password', true);
+    //     $result = $this->Auth_model->check_user($username, $password);
+
+    //     if($result->num_rows() > 0){
+    //         $data = $result->row_array();
+    //         $name = $data['username'];
+    //         $email = $data['email'];
+    //         $level = $data['level'];
+
+    //         $sesdata = array(
+    //             'username' => $username,
+    //             'email' => $email,
+    //             'level' => $level,
+    //             'logged_in' => true
+    //         );
+    //         $this->session->set_userdata($sesdata);
+    //         if($level === '1'){
+    //             redirect("index.php/Admin");
+    //         }elseif($level === '2'){
+    //             redirect("Adviser");
+    //         }else{
+    //             redirect("Student");
+    //         }
+            
+    //     } else{
+    //         $this->session->set_flashdata('error', "Invalid Username or Password");
+    //         redirect("index.php/auth/login");
+            
+    //     }
+    //     $this->load->view('templates/login');
+    // }
 
 
 
